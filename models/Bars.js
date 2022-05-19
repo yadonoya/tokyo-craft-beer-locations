@@ -5,7 +5,7 @@ class Bars {
 
     async findAllBars() {
         try {
-            return await this.db('Bars')
+            return await this.db('bars')
                 .select(['bar_name', 'station', 'smoking_allowed'])
         } catch(err) {
             return err;
@@ -14,7 +14,7 @@ class Bars {
 
     async findAllSmokingBars() {
         try {
-            return await this.db('Bars')
+            return await this.db('bars')
                 .select(['bar_name', 'station', 'smoking_allowed'])
                 .where('smoking_allowed', 't');
         } catch(err) {
@@ -24,7 +24,7 @@ class Bars {
 
     async findAllNonSmokingBars() {
         try {
-            return await this.db('Bars')
+            return await this.db('bars')
                 .select(['bar_name', 'station', 'smoking_allowed'])
                 .where('smoking_allowed', 'f');
         } catch(err) {
@@ -34,7 +34,7 @@ class Bars {
 
     async findBarsByStation(station) {
         try{
-            return await this.db('Bars')
+            return await this.db('bars')
                 .select(['bar_name', 'station', 'smoking_allowed'])
                 .where('station', station);
         } catch(err) {
@@ -44,7 +44,7 @@ class Bars {
 
     async findByName(bar_name) {
         try {
-            return await this.db('Bars')
+            return await this.db('bars')
                 .select(['bar_name', 'station', 'smoking_allowed'])
                 .where('bar_name', bar_name)
         } catch(err) {
@@ -54,7 +54,7 @@ class Bars {
 
     async updateBar(bar_name, edits) {
         try {
-            await this.db('Bars')
+            await this.db('bars')
                 .where('bar_name', bar_name)
                 .update(edits)
                 .timeout(1500);
@@ -66,7 +66,7 @@ class Bars {
 
     async createBar(bar_name, station, smoking_allowed) {
         try {
-            await this.db('Bars')
+            await this.db('bars')
                 .insert({
                     bar_name: bar_name,
                     station: station,
@@ -80,7 +80,7 @@ class Bars {
 
     async deleteBar(bar_name) {
         try {
-            await this.db('Bars')
+            await this.db('bars')
             .where('bar_name', bar_name)
             .del();
             return `${bar_name} was successfully deleted!`;
