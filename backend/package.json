@@ -20,10 +20,17 @@
   },
   "homepage": "https://github.com/yadonoya/tokyo-craft-beer-locations#readme",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "knex": "^2.0.0",
     "nodemon": "^2.0.16",
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-redux": "^8.0.1",
+    "react-scripts": "^5.0.1",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1"
   }
 }

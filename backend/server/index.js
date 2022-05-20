@@ -16,7 +16,7 @@
 // });
 
 const db = require('../db/db');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const { setupServer } = require('./server');
 const app = setupServer();
 
